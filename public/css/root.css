@@ -1,0 +1,22 @@
+:root {
+  --base-clr: #11121a; /* Fondo principal */
+  --line-clr: #42434a; /* Bordes y líneas separadoras */
+  --hover-clr: #222533; /* Fondos en hover */
+  --text-clr: #e6e6ef; /* Texto principal */
+  --accent-clr: #5257fc; /* Color de acento */
+  --secondary-text-clr: #b0b3c1; /* Texto secundario */
+
+  /* Nuevos colores */
+  --success-clr: #4caf50; /* Éxito */
+  --error-clr: #ff6b6b; /* Error */
+  --warning-clr: #ffa726; /* Advertencia */
+  --alt-bg-clr: #1b1d2a; /* Fondo alternativo */
+  --hover-accent-clr: #7a80ff; /* Hover para elementos destacados */
+
+  /*Size icon*/
+  --icon-height: 24px;
+  --icon-weight: 24px;
+
+  /**/
+  --radius-size: 1em;
+}

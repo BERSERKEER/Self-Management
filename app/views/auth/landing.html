@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <!-- Ruta de Estilos -->
+    <link rel="stylesheet" href="public/css/landing.css">
+    <link rel="stylesheet" href="public/css/normalize.css">
+    <!-- Favicon -->
+    <link id="favicon" rel="icon" type="image/png" href="public/images/short_lg-dark.png">
+    <!-- Scripts -->
+    <script src="public/js/icon-theme.js"></script>
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <div class="logo" id="Home">
+            <img src="/Self-Management/public/images/short_lg-dark.png" alt="Logo">
+            <h2>FastFix-Scheduler</h2>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#About">Acerca</a></li>
+            <li><a href="#Services">Servicios</a></li>
+            <li><a href="#Product">Productos</a></li>
+            <li><a href="#Location">Ubicación</a></li>
+            <li><a href="#Contact">Contacto</a></li>
+            <li><a href="/Self-Management/app/views/auth/login.php" class="active">Ingresar</a></li>
+        </ul>
+        <div class="menu-icon" id="menu-icon">☰</div>
+    </nav>
+
+    <!-- Contenedor Principal -->
+    <main class="main">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>Bienvenido a nuestra página web</h1>
+                <p>Esta es una página web de ejemplo.</p>
+                <a href="#Product" class="button-add-icon">
+                    Ver productos
+                    <img src="/Self-Management/public/images/icon/icon-arrow-forward.svg" alt="Icono">
+                </a>
+            </div>
+        </header>
+
+        <!-- Sección: Quiénes Somos -->
+        <section class="section about" id="About">
+            <h2>Quiénes Somos</h2>
+            <p>
+                En SSM Repuestos somos una empresa dedicada a ofrecer los mejores productos y servicios
+                para el mantenimiento y reparación de vehículos. Desde hace más de 10 años, nos hemos
+                consolidado como uno de los principales proveedores de repuestos en la región, siempre
+                comprometidos con la calidad y satisfacción del cliente.
+            </p>
+            <p>
+                Contamos con un equipo altamente capacitado y apasionado por la industria automotriz,
+                que está siempre listo para brindar asesoramiento especializado y soluciones a medida
+                para cada cliente.
+            </p>
+        </section>
+
+        <!-- Sección: Servicios -->
+        <section class="section services" id="Services">
+            <h2>Nuestros Servicios</h2>
+            <p>
+                En SSM Repuestos, ofrecemos más que solo repuestos. Nos especializamos en brindar
+                asesoría experta para el mantenimiento y reparación de vehículos. Ya sea que busques
+                mejorar el rendimiento de tu automóvil o mantenerlo en óptimas condiciones, nuestros
+                técnicos capacitados están aquí para ayudarte.
+            </p>
+
+            <div class="services-container">
+                <div class="service-card">
+                    <img src="/Self-Managementpublic/images/icon/icon_add_shopping.svg" alt="Venta de Repuestos">
+                    <h3>Venta de Repuestos</h3>
+                    <p>Ofrecemos una amplia gama de repuestos originales y alternativos.</p>
+                </div>
+                <div class="service-card">
+                    <img src="/Self-Managementpublic/images/icon/icon_connect_without_contact.svg"
+                        alt="Asesoría Técnica">
+                    <h3>Asesoría Técnica</h3>
+                    <p>Nuestros expertos te guían en el mantenimiento y reparación de tu vehículo.</p>
+                </div>
+                <div class="service-card">
+                    <img src="/Self-Managementpublic/images/icon/icon_engineering_install.svg"
+                        alt="Instalación Profesional">
+                    <h3>Instalación Profesional</h3>
+                    <p>Contamos con técnicos especializados para la instalación de piezas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Productos -->
+        <section class="section product" id="Product">
+            <h2>Nuestros Productos</h2>
+            <p>Descubre nuestra variedad de productos de alta calidad para tu vehículo.</p>
+
+            <div class="product-container">
+                <div class="product-card">
+                    <img src="/Self-Managementpublic/images/icon/icon-settings.svg" alt="Filtro de Aceite">
+                    <h3>Filtro de Aceite</h3>
+                    <p>Protege el motor de tu auto con nuestros filtros de aceite de alta calidad.</p>
+                </div>
+                <div class="product-card">
+                    <img src="/Self-Managementpublic/images/icon/icon-settings.svg" alt="Pastillas de Freno">
+                    <h3>Pastillas de Freno</h3>
+                    <p>Pastillas de freno resistentes para una conducción segura y eficiente.</p>
+                </div>
+                <div class="product-card">
+                    <img src="/Self-Managementpublic/images/icon/icon-settings.svg" alt="Batería de Auto">
+                    <h3>Batería de Auto</h3>
+                    <p>Baterías duraderas con alto rendimiento para todo tipo de vehículos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Ubicación -->
+        <section class="section location" id="Location">
+            <h2>Nuestra Ubicación</h2>
+            <p>Encuéntranos fácilmente en nuestra tienda física, ubicada en una zona céntrica y de fácil acceso.</p>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" style="border:0;"
+                    allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <!-- Sección: Contacto -->
+        <section class="section contact" id="Contact">
+            <h2>Contáctanos</h2>
+            <p>¿Tienes alguna consulta? Escríbenos y te responderemos lo antes posible.</p>
+            <form class="contact-form">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <a href="#" class="submit-btn">Enviar Consulta</a>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>Contacto</h3>
+                <p>📍 Calle 123, Ciudad, País</p>
+                <p>📞 +123 456 789</p>
+                <p>📧 contacto@empresa.com</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2024 Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Script de navegación responsiva -->
+    <script>
+        const menuIcon = document.getElementById("menu-icon");
+        const navLinks = document.getElementById("nav-links");
+
+        menuIcon.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+        });
+    </script>
+
+</body>
+
+</html>

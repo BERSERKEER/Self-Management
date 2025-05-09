@@ -1,0 +1,180 @@
+@import url(root.css);
+
+html {
+  font-family: Poppins, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5rem;
+}
+
+body {
+  font-family: var(--font-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--base-clr);
+  color: var(--text-clr);
+}
+
+.auth-container {
+  padding: 40px;
+  border-radius: var(--radius-border);
+  max-width: 400px;
+  width: 100%;
+  border: 1px solid var(--line-clr);
+  border-radius: 1em;
+  background-color: var(--alt-bg-clr);
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-container img {
+  width: 70%;
+  display: block;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: var(--radius-border);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background-color: var(--accent-clr);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-accent-clr);
+}
+
+.form-link {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 10px;
+  align-items: center;
+}
+
+.form-link a {
+  color: var(--accent-clr);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.form-link a:hover {
+  color: var(--hover-accent-clr);
+}
+
+.form-error {
+  background-color: var(--error-clr);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  padding: 30px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: var(--radius-border);
+}
+
+.form-field {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.form-input {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid var(--line-clr);
+  background-color: transparent;
+  color: var(--text-clr);
+  border-radius: var(--radius-border);
+}
+
+.form-input:focus {
+  border-color: var(--accent-clr);
+}
+
+.input-label {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  font-size: 14px;
+  color: var(--secondary-text-clr);
+  transition: 0.3s;
+  pointer-events: none;
+  background-color: var(--alt-bg-clr);
+  padding: 0 5px;
+}
+
+.form-input:focus + .input-label,
+.form-input:not(:placeholder-shown) + .input-label {
+  top: -10px;
+  color: var(--accent-clr);
+}
+
+/*Responsive Design*/
+@media screen and (max-width: 768px) {
+  .auth-container {
+    padding: 30px;
+    max-width: 90%;
+  }
+
+  .login-form {
+    padding: 20px;
+  }
+
+  .form-input {
+    padding: 12px;
+  }
+
+  .btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .auth-container {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .logo-container img {
+    max-width: 80%;
+  }
+
+  .login-form {
+    padding: 15px;
+  }
+
+  .form-input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .form-link {
+    justify-content: center;
+    text-align: center;
+  }
+}
