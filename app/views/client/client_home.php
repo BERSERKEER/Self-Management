@@ -1,14 +1,13 @@
 <!--Inicia session ven base al rol-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido</title>
-    <!-- Libraries -->
     <!-- CSS Styles -->
-    <link rel="stylesheet" href="/Self-Management/public/css/login_style.css">
+    <link rel="stylesheet" href="/Self-Management/public/css/style.css">
     <link rel="stylesheet" href="/Self-Management/public/css/normalize.css">
     <!-- Favicon/images -->
     <link id="favicon" rel="icon" type="image/png" href="/Self-Management/public/images/short_lg-dark.png">
@@ -17,32 +16,35 @@
 </head>
 
 <body>
-    <!--Funcion: texto en base a zona horaria-->
     <?php
+    // Establece la zona horaria
     date_default_timezone_set('America/Bogota');
     $hora = date('H');
 
+    // Saludo y mensaje personalizado para cliente
     if ($hora >= 5 && $hora < 12) {
-        $saludo = "Buenos días, Usuario";
-        $mensaje = "Un nuevo día para liderar y optimizar la gestión del sistema.";
+        $saludo = "¡Buenos días!";
+        $mensaje = "Esperamos que tengas una mañana productiva. Explora las herramientas disponibles para agendar tus citas, gestionar tus solicitudes y mantenerte al tanto de tus actividades.";
     } elseif ($hora >= 12 && $hora < 18) {
-        $saludo = "Buenas tardes, Usuario";
-        $mensaje = "Sigue supervisando y asegurando el buen funcionamiento de la plataforma.";
+        $saludo = "¡Buenas tardes!";
+        $mensaje = "Gracias por continuar con nosotros durante el día. Puedes revisar el estado de tus gestiones o agendar una nueva cita según tu conveniencia.";
     } else {
-        $saludo = "Buenas noches, Usuario";
-        $mensaje = "Antes de cerrar el día, revisa los últimos detalles para un mejor control.";
+        $saludo = "¡Buenas noches!";
+        $mensaje = "Antes de finalizar tu jornada, aprovecha para organizar tus próximas citas o revisar el seguimiento de tus solicitudes pendientes. ¡Tu comodidad es nuestra prioridad!";
     }
     ?>
 
-    <!--Include componenet: Sidebar -->
+    <!-- Sidebar del cliente -->
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Self-Management/app/views/shared/sidebar_client.php'; ?>
+
     <main>
         <div class="container">
             <div class="welcome-container">
                 <div class="welcome-content">
-                    <h1>Bienvenido al Dashboard</h1>
+                    <h1><?php echo $saludo; ?> Bienvenido al Dashboard</h1>
                     <p><?php echo $mensaje; ?></p>
-                    <button type="button" class="button button1" data-bs-toggle="modal" data-bs-target="#formModal">Agendar cita
+                    <button type="button" class="button button1" data-bs-toggle="modal" data-bs-target="#formModal">
+                        Agendar una cita
                     </button>
                 </div>
                 <div class="welcome-image">

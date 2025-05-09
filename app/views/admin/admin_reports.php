@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Historial de servicios</title>
   <!-- Libraries -->
+  <!-- Bootstrap 5 JS y CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- CSS Styles -->
   <link rel="stylesheet" href="/Self-Management/public/css/style.css">
   <link rel="stylesheet" href="/Self-Management/public/css/normalize.css">
@@ -59,7 +61,6 @@
             <td>Juan Ramírez</td>
             <td>Completado</td>
           </tr>
-          <!-- Más filas... -->
         </tbody>
       </table>
 
@@ -71,14 +72,13 @@
       </div>
 
       <div class="stats">
-        <h3>Estadísticas (Placeholder)</h3>
-        <div class="chart-placeholder">
-          📈 Aquí irán los gráficos (servicios por mes, ingresos, técnicos más activos, etc.)
+        <h3>Estadísticas</h3>
+        <div class="chart-container">
+          <canvas id="servicesChart"></canvas>
         </div>
       </div>
+
     </div>
-
-
 
     <h3>Historial de servicios</h3>
     <div class="container">
@@ -104,6 +104,43 @@
       </table>
     </div>
   </main>
+  
+  <script>
+    const ctx = document.getElementById('servicesChart').getContext('2d');
+    const servicesChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
+        datasets: [{
+          label: 'Servicios por mes',
+          data: [12, 19, 3, 5, 2],
+          backgroundColor: [
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 99, 132, 0.2)'
+          ],
+          borderColor: [
+            'rgba(75, 192, 192, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 99, 132, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
 </body>
 
 </html>
