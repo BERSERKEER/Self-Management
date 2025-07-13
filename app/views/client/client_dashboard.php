@@ -20,11 +20,6 @@
     <!--Include componenet: Sidebar -->
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Self-Management/app/views/shared/sidebar_client.php'; ?>
     <main>
-        <div class="container">
-            <h2>Resumen General</h2>
-            <p>Bienvenido al panel de control. Aquí puedes visualizar y gestionar los datos clave en tiempo real, monitorear el rendimiento y tomar decisiones informadas para optimizar la gestión.</p>
-        </div>
-
         <!-- Cards -->
         <div class="stats-cards separator">
             <!-- Card:1 -->
@@ -63,6 +58,7 @@
                 </a>
             </div>
         </div>
+
         <div class="container">
             <h3>Actividad Reciente</h3>
             <table class="user-table">
@@ -91,15 +87,60 @@
             </table>
         </div>
 
+        <!-- Charts -->
         <div class="separator">
             <div class="container">
-                <h3>Notificaciones</h3>
-                <p>Recibe alertas y recordatorios sobre tus citas, servicios y novedades.</p>
-                <p>Recordatorio: Tu cita está programada para el 10 de mayo a las 15:30h.</p>
-                <button class="btn btn-primary">Ver detalles</button>
+                <h3>Servicios más solicitados</h3>
+                <p>Consulta el historial de citas y servicios realizados.</p>
+                <canvas id="mostRequestedServicesChart"></canvas>
+            </div>
+
+            <div class="separator">
+                <div class="container">
+                    <h3>Notificaciones</h3>
+                    <p>Recibe alertas y recordatorios sobre tus citas, servicios y novedades.</p>
+                    <p>Recordatorio: Tu cita está programada para el 10 de mayo a las 15:30h.</p>
+                    <button class="btn btn-primary">Ver detalles</button>
+                </div>
             </div>
         </div>
     </main>
+
+    <script>
+        // Datos para la gráfica
+        const ctx = document.getElementById('mostRequestedServicesChart').getContext('2d');
+        const mostRequestedServicesChart = new Chart(ctx, {
+            type: 'bar', // Tipo de gráfica
+            data: {
+                labels: ['Cambio de aceite', 'Revisión general', 'Alineación', 'Frenos'], // Etiquetas
+                datasets: [{
+                    label: 'Servicios más solicitados',
+                    data: [10, 7, 5, 3], // Datos de ejemplo
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(255, 99, 132, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(255, 99, 132, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

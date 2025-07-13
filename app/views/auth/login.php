@@ -64,7 +64,7 @@
                 <p>¿No tienes cuenta?
                     <a href="/Self-Management/app/views/auth/register_log.php">Regístrate</a>
                 </p>
-                <a href="/Self-Management/app/views/client/client_home.php">Olvide contraseña</a>
+                <a href="/Self-Management/app/views/employeer/emply_home.php">Olvide contraseña</a>
             </div>
         </form>
     </main>

@@ -1,51 +1,54 @@
-<!--Inicia session ven base al rol-->
+<!-- Inicia sesión según el rol del usuario -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido</title>
-    <!-- Libraries -->
-    <!-- CSS Styles -->
+
+    <!-- Estilos CSS -->
     <link rel="stylesheet" href="/Self-Management/public/css/style.css">
     <link rel="stylesheet" href="/Self-Management/public/css/normalize.css">
-    <!-- Favicon/images -->
+
+    <!-- Ícono de pestaña -->
     <link id="favicon" rel="icon" type="image/png" href="/Self-Management/public/images/short_lg-dark.png">
-    <!-- JS Scripts -->
+
+    <!-- Scripts JS -->
     <script src="/Self-Management/public/js/icon-theme.js"></script>
 </head>
 
 <body>
-    <!--Funcion: texto en base a zona horaria-->
+    <!-- Mensaje dinámico basado en la zona horaria del servidor -->
     <?php
     date_default_timezone_set('America/Bogota');
     $hora = date('H');
 
     if ($hora >= 5 && $hora < 12) {
-        $saludo = "Buenos días, Tecnico";
-        $mensaje = "Un nuevo día para liderar y optimizar la gestión del sistema.";
+        $saludo = "Buenos días, Técnico";
+        $mensaje = "Un nuevo día comienza. Es momento de liderar, organizar y optimizar cada proceso del sistema.";
     } elseif ($hora >= 12 && $hora < 18) {
         $saludo = "Buenas tardes, Administrador";
-        $mensaje = "Sigue supervisando y asegurando el buen funcionamiento de la plataforma.";
+        $mensaje = "La jornada continúa. Sigue supervisando, tomando decisiones clave y asegurando el funcionamiento eficiente de la plataforma.";
     } else {
         $saludo = "Buenas noches, Administrador";
-        $mensaje = "Antes de cerrar el día, revisa los últimos detalles para un mejor control.";
+        $mensaje = "El día llega a su fin. Aprovecha este momento para revisar los últimos detalles y dejar todo listo para mañana.";
     }
     ?>
 
-    <!--Include componenet: Sidebar -->
+    <!-- Sidebar compartido (componente reutilizable) -->
     <?php include $_SERVER['DOCUMENT_ROOT'] . '/Self-Management/app/views/shared/sidebar_employ.php'; ?>
+
     <main>
         <div class="container">
             <div class="welcome-container">
                 <div class="welcome-content">
-                    <h1>Bienvenido al Dashboard</h1>
+                    <h1><?php echo $saludo; ?> al Dashboard</h1>
                     <p><?php echo $mensaje; ?></p>
-                   <button class="button success">Ver detalles</button>
+                    <button class="button success">Ver detalles</button>
                 </div>
                 <div class="welcome-image">
-                    <img src="/Self-Management/public/images/render1.png" alt="Dashboard Image">
+                    <img src="/Self-Management/public/images/render1.png" alt="Imagen del Dashboard">
                 </div>
             </div>
         </div>

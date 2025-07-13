@@ -71,6 +71,14 @@
                     <span>Historial de servicios</span>
                 </a>
             </li>
+
+             <!--Item 5-->
+            <li>
+                <a href="/Self-Management/app/views/employeer/emply_settings.php">
+                    <img src="/Self-Management/public/images/icon/icon-table.svg" alt="Home" height="24px" width="24px">
+                    <span>Configuraciones</span>
+                </a>
+            </li>
             <!--Item 8: /Self-Management/app/controllers/AuthController.php?action=logout-->
             <li>
                 <a href="" id="logout-btn">

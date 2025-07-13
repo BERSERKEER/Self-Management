@@ -302,6 +302,7 @@ main p {
   background-color: var(--accent-clr);
   border-radius: var(--radius-size);
   padding: 8px;
+  margin: 10px 0;
 }
 
 .stat-card .button-box:hover {
@@ -626,7 +627,7 @@ a {
   background: var(--primary-clr);
   padding: 15px;
   border-radius: var(--radius-size);
-
+  margin: 0px 0px 20px 0px;
   color: white;
 }
 
@@ -823,9 +824,11 @@ select {
 .badge.success {
   background-color: #28a745;
 }
+
 .badge.error {
   background-color: #dc3545;
 }
+
 .badge.warning {
   background-color: #ffc107;
 }
