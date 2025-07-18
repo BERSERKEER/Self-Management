@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    header("Location: /Self-Management/app/views/auth/login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -49,6 +57,8 @@
                 </div>
             </div>
         </div>
+        <h2>Bienvenido, <?php echo $_SESSION['user']; ?>!</h2>
+        <a href="/Self-Management/app/views/auth/logout.php">Cerrar sesión</a>
     </main>
 </body>
 

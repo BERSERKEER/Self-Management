@@ -1,31 +1,29 @@
 <?php
-session_start();
+require_once __DIR__ . '/../models/UserModel.php';
 
-require_once 'models/UserModel.php';
+class LoginController
+{
+    private $userModel;
 
-class LoginController {
-    public function login() {
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $username = $_POST['username'];
-            $password = $_POST['password'];
-
-            $userModel = new UserModel();
-            $user = $userModel->checkUser($username, $password);
-
-            if ($user) {
-                $_SESSION['username'] = $user['username'];
-                $_SESSION['role'] = $user['role'];
-                header("Location: index.php");
-            } else {
-                echo "Credenciales incorrectas.";
-            }
-        }
-        require_once 'views/login_view.php';
+    public function __construct($db)
+    {
+        $this->userModel = new UserModel($db);
     }
 
-    public function logout() {
-        session_destroy();
-        header("Location: index.php");
+    public function login($correo, $password)
+    {
+        $user = $this->userModel->validateLogin($correo, $password);
+
+        if ($user) {
+            session_start();
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['nombre'] = $user['nombre'];
+            $_SESSION['rol'] = $user['rol'];
+
+            return $user['rol'] == 1 ?
+                '/Self-Management/app/views/admin/admin_home.php' :
+                '/Self-Management/app/views/client/client_home.php';
+        }
+        return false;
     }
 }
-?>
