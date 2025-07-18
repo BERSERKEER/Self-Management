@@ -17,35 +17,36 @@
 <body>
     <main class="auth-container" id="login">
         <h2>Crear cuenta</h2>
-        <form action="" method="POST">
-            <input type="hidden" name="action" value="login">
+        <form action="/Self-Management/register.php" method="POST">
+            <input type="hidden" name="action" value="register">
 
             <div class="form-field">
-                <input class="form-input" type="name" id="name" name="name" required placeholder=" ">
-                <label class="input-label" for="name">Nombres completos</label>
+                <input class="form-input" type="text" id="nombre" name="nombre" required placeholder=" ">
+                <label class="input-label" for="nombre">Nombres completos</label>
             </div>
 
             <div class="form-field">
-                <input class="form-input" type="name" id="name" name="name" required placeholder=" ">
-                <label class="input-label" for="name">Apellidos completos</label>
+                <input class="form-input" type="tel" id="telefono" name="telefono" required placeholder=" ">
+                <label class="input-label" for="telefono">Teléfono</label>
             </div>
 
             <div class="form-field">
-                <input class="form-input" type="email" id="email" name="email" required placeholder=" ">
-                <label class="input-label" for="email">Correo electronico</label>
+                <input class="form-input" type="email" id="correo" name="correo" required placeholder=" ">
+                <label class="input-label" for="correo">Correo electrónico</label>
             </div>
 
             <div class="form-field">
                 <input type="password" class="form-input" id="password" name="password" required placeholder=" ">
                 <label class="input-label" for="password">Contraseña</label>
             </div>
+            
+            <?php if (isset($_SESSION['error'])): ?>
+                <div class="alert alert-danger">
+                    <?php echo $_SESSION['error']; unset($_SESSION['error']); ?>
+                </div>
+            <?php endif; ?>
 
-            <div class="form-field">
-                <input type="checkbox" id="terms" name="terms" required>
-                <label for="terms">Acepto los <a href="/Self-Management/app/views/auth/terms_conditions.php" target="_blank">términos y condiciones</a></label>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Crear</button>
+            <button type="submit" class="btn btn-primary">Crear cuenta</button>
         </form>
     </main>
 </body>
