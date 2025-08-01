@@ -18,14 +18,18 @@
         <ul>
             <!--Item menu-->
             <li>
-                <span class="logo">Self-Management</span>
-                <button onclick=toggleSidebar() id="toggle-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                        fill="#e8eaed">
-                        <path
-                            d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z" />
-                    </svg>
-                </button>
+                <!--Item menu-->
+                <li<?php session_start(); ?>
+                    <span class="logo">
+                    Bienvenido, <?php echo htmlspecialchars($_SESSION['nombre']); ?>
+                    </span>
+                    <button onclick=toggleSidebar() id="toggle-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#e8eaed">
+                            <path
+                                d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z" />
+                        </svg>
+                    </button>
             </li>
             <!--Item 1-->
             <li>
@@ -48,16 +52,16 @@
                     <span>Mis servicios</span>
                 </a>
             </li>
-             <!--Item 4-->
-             <li>
+            <!--Item 4-->
+            <li>
                 <a href="/Self-Management/app/views/employeer/employ_appointment_management.php">
                     <img src="/Self-Management/public/images/icon/icon-table.svg" alt="Home" height="24px" width="24px">
                     <span>Citas Asignadas</span>
                 </a>
             </li>
 
-             <!--Item 4-->
-             <li>
+            <!--Item 4-->
+            <li>
                 <a href="/Self-Management/app/views/employeer/employ_appointment_management.php">
                     <img src="/Self-Management/public/images/icon/icon-table.svg" alt="Home" height="24px" width="24px">
                     <span>Calendario de Citas</span>
@@ -72,7 +76,7 @@
                 </a>
             </li>
 
-             <!--Item 5-->
+            <!--Item 5-->
             <li>
                 <a href="/Self-Management/app/views/employeer/emply_settings.php">
                     <img src="/Self-Management/public/images/icon/icon-table.svg" alt="Home" height="24px" width="24px">
@@ -124,4 +128,4 @@
     <script src="/Self-Management/public/js/logout.js"></script>
 </body>
 
-    <!--perfil add-->
+<!--perfil add-->

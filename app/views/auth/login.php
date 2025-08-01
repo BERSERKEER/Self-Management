@@ -26,7 +26,7 @@
         </div>
 
         <!-- Formulario de inicio de sesión -->
-        <form action="/Self-Management/index.php" method="POST">
+        <form action="/Self-Management/index.php?controller=login&action=validar" method="POST">
             <div class="form-field">
                 <input class="form-input" type="text" id="correo" name="correo" required placeholder=" " />
                 <label class="input-label" for="correo">Correo electrónico</label>

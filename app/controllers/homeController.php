@@ -3,6 +3,7 @@ class HomeController
 {
     public function index()
     {
-        require_once __DIR__ . '/../../app/views/auth/landing.html';
+        // Cargar vista
+        require __DIR__ . '/../views/auth/landing.html';
     }
 }

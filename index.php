@@ -1,21 +1,13 @@
 <?php
-require_once 'config/database.php';
-require_once 'app/controllers/LoginController.php';
+$db = new mysqli('localhost', 'root', '', 'db_ssm');
 
-session_start();
+$controllerName = ucfirst($_GET['controller'] ?? 'home') . 'Controller';
+require_once 'app/controllers/' . $controllerName . '.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $controller = new LoginController($conexion);
-    $redirect = $controller->login($_POST['correo'], $_POST['password']);
-
-    if ($redirect) {
-        header("Location: " . $redirect);
-        exit();
-    } else {
-        $_SESSION['error'] = "Usuario o contraseña incorrectos";
-        header("Location: /Self-Management/app/views/auth/login.php");
-        exit();
-    }
+$controller = new $controllerName($db);
+$action = $_GET['action'] ?? 'index';
+if (method_exists($controller, $action)) {
+    $controller->$action();
+} else {
+    echo "Error: método '$action' no encontrado en $controllerName";
 }
-
-header("Location: /Self-Management/app/views/auth/login.php");
